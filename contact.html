@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Foodie Faves | Get in Touch With Our Culinary Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --fresh-basil: #8BC34A;
+            --tomato-red: #F44336;
+            --golden-yellow: #FFEB3B;
+            --charcoal-gray: #424242;
+            --light-gray: #f5f5f5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--charcoal-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            color: var(--charcoal-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--tomato-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e53935;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7CB342;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--fresh-basil);
+            color: var(--fresh-basil);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--fresh-basil);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--tomato-red);
+        }
+
+        .logo i {
+            color: var(--fresh-basil);
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--tomato-red);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--tomato-red);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-actions a {
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+
+        .user-actions .btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Contact Form Styles */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .contact-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            max-width: 800px;
+            margin: -50px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--fresh-basil);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            background-color: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--tomato-red);
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #eee;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Team Section */
+        .team-section {
+            background-color: var(--light-gray);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-photo img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .team-position {
+            color: var(--tomato-red);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            color: var(--charcoal-gray);
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            color: var(--tomato-red);
+        }
+
+        /* Map Section */
+        .map-section iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Office Hours */
+        .hours-section {
+            background-color: var(--light-gray);
+        }
+
+        .hours-table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .hours-table th, .hours-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hours-table th {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        .hours-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .hours-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .contact-hero {
+                height: 50vh;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form-container {
+                padding: 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i> Foodie Faves
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="#" title="Search"><i class="fas fa-search"></i></a>
+                <a href="#" title="Favorites"><i class="fas fa-heart"></i></a>
+                <a href="#" title="Account"><i class="fas fa-user"></i></a>
+                <a href="#" class="btn btn-primary">Upload Recipe</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content fade-in">
+            <h1>We'd Love to Hear From You</h1>
+            <p>Whether you have questions about recipes, need technical support, or want to collaborate, our team is here to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <div class="container">
+        <div class="contact-form-container fade-in delay-1">
+            <form class="contact-form">
+                <h2>Send Us a Message</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" id="subject" class="form-control" placeholder="What's this about?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" class="form-control" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <h2 class="section-title fade-in">Other Ways to Reach Us</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card fade-in delay-1">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>Our culinary experts are available to take your call Monday-Friday from 9AM to 5PM EST.</p>
+                    <p><strong>+1 (800) 555-1234</strong></p>
+                </div>
+                
+                <div class="contact-card fade-in delay-2">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>For general inquiries, recipe suggestions, or partnership opportunities.</p>
+                    <p><strong>hello@foodiefaves.com</strong></p>
+                </div>
+                
+                <div class="contact-card fade-in delay-3">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Our headquarters in Brooklyn, NY. Open for scheduled visits and culinary events.</p>
+                    <p><strong>123 Culinary Ave, Brooklyn, NY 11201</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in delay-1">
+                    <div class="faq-question">
+                        <span>How do I submit my own recipe to Foodie Faves?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We love receiving recipe submissions from our community! To submit your recipe, click on the "Upload Recipe" button in the top navigation. You'll need to create a free account if you don't already have one. Our editorial team reviews all submissions within 5-7 business days. Make sure to include clear instructions, ingredient measurements, and high-quality photos to increase your chances of being featured.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <div class="faq-question">
+                        <span>What's the best way to contact customer support?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For fastest response, use our contact form above or email support@foodiefaves.com. Our support team typically responds within 24 hours Monday-Friday. If you're experiencing technical issues with the website or app, please include screenshots and details about your device/browser. For account-related questions, have your username or email address ready.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-3">
+                    <div class="faq-question">
+                        <span>How can I report an error in a recipe?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We appreciate when our community helps us maintain recipe accuracy. On each recipe page, you'll find a "Report Error" button below the instructions. Alternatively, you can email corrections@foodiefaves.com with the recipe title, specific issue, and your suggested correction. Our test kitchen will verify the issue and update the recipe accordingly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-1">
+                    <div class="faq-question">
+                        <span>Do you offer cooking classes or culinary events?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We host monthly virtual cooking classes featuring our most popular recipes and seasonal specials. In-person events are held quarterly at our Brooklyn test kitchen. Check our Events page for upcoming schedules and ticketing information. We also offer private virtual classes for groups - email events@foodiefaves.com for more information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in delay-2">
+                    <div class="faq-question">
+                        <span>How do I request permission to use your recipes in my publication?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All recipe content is copyrighted by Foodie Faves. For reprint permissions, please contact licensing@foodiefaves.com with details about your publication, circulation, and which recipes you'd like to use. Most individual home cooks are welcome to use our recipes with proper attribution without needing formal permission. Our full copyright policy is available on our Terms page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2s!4v1623251157714!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Office Hours -->
+    <section class="hours-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Office Hours</h2>
+            
+            <table class="hours-table fade-in delay-1">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Hours</th>
+                        <th>Available Services</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                        <td>Phone, Email, In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                        <td>Phone, Email, In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                        <td>Phone, Email, In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>9:00 AM - 7:00 PM</td>
+                        <td>Phone, Email, In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                        <td>Phone, Email</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>10:00 AM - 2:00 PM</td>
+                        <td>Email Only</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Closed</td>
+                        <td>Email Only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Additional Contact Points -->
+    <section class="additional-points">
+        <div class="container">
+            <h2 class="section-title fade-in">More Ways to Connect</h2>
+            
+            <div class="points-grid">
+                <div class="point-item fade-in delay-1">
+                    <h3>1. Social Media Support</h3>
+                    <p>We actively monitor our social media channels and typically respond within a few hours. DM us on Instagram @FoodieFavesOfficial or tweet @FoodieFavesHelp for quick questions. Our social team can assist with account issues, recipe questions, and general inquiries. For privacy concerns, we recommend using email instead.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>2. Community Forums</h3>
+                    <p>Join our active community of home cooks in the Foodie Faves forums. While not official support, many experienced members can help with recipe troubleshooting, substitutions, and technique questions. Our moderators check the forums daily and will escalate issues to staff when needed. Search the forums first—your question may already be answered!</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>3. Live Chat (Premium Members)</h3>
+                    <p>Premium members have access to our live chat feature during business hours. Connect instantly with our culinary team for real-time cooking advice, recipe modifications for dietary restrictions, or technical support. Look for the chat icon in the bottom right corner when logged into your premium account.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>4. Newsletter Feedback</h3>
+                    <p>Each edition of our weekly newsletter includes a "Reply to this email" option. We read every response and typically reply within 48 hours. This is a great way to share feedback on recipes you've tried, suggest newsletter topics, or request specific types of content. Newsletter replies go directly to our editorial team.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>5. Video Comments</h3>
+                    <p>For questions about our recipe videos, leave a comment on the video page. Our video producers and culinary team monitor comments and will respond to questions about techniques, ingredients, or preparation shown in the videos. Comments are also a great place to share your results or variations you've tried.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>6. Affiliate Program Inquiries</h3>
+                    <p>Bloggers, influencers, and publishers interested in our affiliate program should email affiliates@foodiefaves.com. Include information about your platform, audience size, and why you'd be a good fit. Our partnerships team reviews applications weekly and typically responds within 7-10 business days.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>7. Press & Media</h3>
+                    <p>Journalists and media professionals can contact press@foodiefaves.com for interview requests, press kits, or expert commentary. Our PR team can connect you with our culinary experts for quotes, demonstrations, or features. Please include your deadline, outlet, and specific request in your initial email.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>8. Advertising Opportunities</h3>
+                    <p>For information about advertising on Foodie Faves, email sales@foodiefaves.com. We offer sponsored content, display advertising, and newsletter placements. Include your company information, target audience, and campaign goals. Our sales team will provide media kits and availability information.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>9. Recipe Testing Program</h3>
+                    <p>We're always looking for home cooks to test recipes before publication. Join our tester community by emailing testers@foodiefaves.com with your cooking experience, dietary preferences, and availability. Testers receive recipes to prepare at home and provide detailed feedback on instructions, timing, and results.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>10. Careers & Internships</h3>
+                    <p>Check our Careers page for current openings, or send your resume to careers@foodiefaves.com. We offer culinary internships, developer positions, and various editorial roles throughout the year. Specify which department you're interested in and include relevant experience in your application.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>11. Event Sponsorship</h3>
+                    <p>Foodie Faves sponsors food festivals, cooking competitions, and culinary education events. For sponsorship requests, email events@foodiefaves.com at least 3 months prior to your event date. Include event details, expected attendance, and what type of partnership you're seeking.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>12. Wholesale & Bulk Licensing</h3>
+                    <p>Restaurants, meal kit services, and publishers interested in bulk recipe licensing should contact wholesale@foodiefaves.com. We offer customized recipe packages with testing and adaptation for commercial use. Include information about your business and how you plan to use the recipes.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>13. Accessibility Support</h3>
+                    <p>We're committed to making Foodie Faves accessible to all cooks. For accessibility issues or suggestions, email accessibility@foodiefaves.com. Our team can provide recipes in alternative formats or work to improve site navigation for users with disabilities.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>14. School & Nonprofit Programs</h3>
+                    <p>Educational institutions and nonprofit organizations can inquire about our free curriculum resources by emailing education@foodiefaves.com. We provide lesson plans, cooking demonstrations, and nutrition education materials tailored to different age groups and needs.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>15. App Feature Requests</h3>
+                    <p>Have an idea to improve our mobile app? Submit feature requests to app@foodiefaves.com. Describe the functionality you'd like to see and how it would enhance your cooking experience. Our development team reviews all suggestions and prioritizes based on user demand.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>16. Dietary Specialist Consultations</h3>
+                    <p>Our registered dietitians offer free 15-minute consultations to help you adapt recipes for specific dietary needs. Email nutrition@foodiefaves.com to schedule a call. Include your dietary restrictions and types of recipes you're interested in modifying.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>17. Cookbook Author Support</h3>
+                    <p>Aspiring cookbook authors can email authors@foodiefaves.com for guidance on recipe development, food photography, and publishing. While we don't publish cookbooks, our team offers consultations and can connect you with industry professionals.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>18. Ingredient Sourcing Questions</h3>
+                    <p>Having trouble finding a specialty ingredient from one of our recipes? Email ingredients@foodiefaves.com for sourcing suggestions. Our team maintains a database of online and local suppliers for hard-to-find items and can recommend substitutions when necessary.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>19. Equipment Recommendations</h3>
+                    <p>Not sure what kitchen tools you need for a recipe? Email equipment@foodiefaves.com with your question, budget, and cooking style. Our test kitchen team provides unbiased recommendations for everything from budget basics to professional-grade tools.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>20. Cultural & Traditional Recipes</h3>
+                    <p>Looking for authentic traditional recipes not currently on our site? Email traditions@foodiefaves.com with your request. Our cultural research team works with native cooks to develop and test traditional recipes while providing cultural context and history.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>21. Cooking Technique Videos</h3>
+                    <p>Want to see a specific cooking technique demonstrated? Request tutorial videos by emailing techniques@foodiefaves.com. Our video team prioritizes requests based on popularity and will notify you when your requested technique is featured.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>22. Recipe Scaling Assistance</h3>
+                    <p>Need help adjusting a recipe for more or fewer servings? Email scaling@foodiefaves.com with the recipe link and desired serving size. Our culinary math experts will provide properly adjusted measurements and any necessary technique modifications.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>23. Food Safety Questions</h3>
+                    <p>For concerns about food storage, preservation, or safety in our recipes, email safety@foodiefaves.com. Our food safety certified team will review your question and provide science-based recommendations within 24 hours.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>24. Recipe History & Origins</h3>
+                    <p>Curious about the history behind a particular dish? Email history@foodiefaves.com with your questions. Our culinary historians research recipe origins, regional variations, and the evolution of cooking techniques over time.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>25. Kids Cooking Resources</h3>
+                    <p>Parents and educators can email kids@foodiefaves.com for age-appropriate recipes and cooking activities. We provide kitchen safety guides, skill-building exercises, and fun food projects tailored to different developmental stages.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>26. Holiday & Celebration Help</h3>
+                    <p>Planning a special meal for holidays or celebrations? Email holidays@foodiefaves.com for menu planning assistance, timeline suggestions, and stress-free entertaining tips from our party planning experts.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>27. Restaurant Recipe Recreation</h3>
+                    <p>Want to make your favorite restaurant dish at home? Email recreations@foodiefaves.com with details about the dish. Our reverse engineering team analyzes flavors and textures to create achievable home versions of professional dishes.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>28. Cooking for Special Diets</h3>
+                    <p>Our nutrition team helps adapt recipes for medical dietary needs. Email specialdiets@foodiefaves.com with doctor's recommendations and food preferences. We provide modified recipes for conditions like diabetes, celiac disease, and food allergies.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>29. Budget Cooking Advice</h3>
+                    <p>Need to eat well on a tight budget? Email budget@foodiefaves.com for cost-effective meal plans, shopping lists, and recipes that maximize flavor while minimizing expense. Our budget cooking specialists can help you save without sacrificing quality.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>30. Time-Saving Cooking Tips</h3>
+                    <p>Short on time but want homemade meals? Email timesavers@foodiefaves.com for strategies to streamline your cooking process. We provide meal prep guides, efficient techniques, and recipes designed for busy schedules.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>31. Cooking Science Questions</h3>
+                    <p>Why do certain cooking techniques work? Email science@foodiefaves.com with your food science questions. Our culinary scientists explain the chemistry and physics behind cooking processes in easy-to-understand terms.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>32. International Cooking Help</h3>
+                    <p>Attempting a cuisine you're unfamiliar with? Email worldcuisine@foodiefaves.com for guidance on essential ingredients, equipment, and techniques. Our international cooking specialists help you navigate global flavors with confidence.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>33. Cooking for Crowds</h3>
+                    <p>Need to scale up recipes for large gatherings? Email crowds@foodiefaves.com with your event details and menu ideas. Our catering experts provide quantity adjustments, equipment recommendations, and serving timeline templates.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>34. Seasonal Ingredient Questions</h3>
+                    <p>Not sure what's in season in your area? Email seasonal@foodiefaves.com with your location and time of year. We'll send a customized seasonal produce guide with storage tips and recipe suggestions for peak-flavor ingredients.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>35. Cooking for One or Two</h3>
+                    <p>Tired of halving or quartering recipes? Email smallbatch@foodiefaves.com for properly scaled recipes designed specifically for 1-2 servings, with no awkward leftover ingredients.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>36. Zero-Waste Cooking</h3>
+                    <p>Want to reduce food waste in your kitchen? Email zerowaste@foodiefaves.com for recipes and techniques that use every part of ingredients, along with creative ways to repurpose leftovers.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>37. Cooking with Kids</h3>
+                    <p>Looking for safe, engaging cooking activities for children? Email kids@foodiefaves.com for age-appropriate recipes, skill-building exercises, and kitchen safety guides tailored to young chefs.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-2">
+                    <h3>38. Cooking for Seniors</h3>
+                    <p>Need recipes adapted for changing nutritional needs or physical abilities? Email seniors@foodiefaves.com for easy-to-prepare, nutrient-dense meals designed with older adults in mind.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-3">
+                    <h3>39. Cooking with Disabilities</h3>
+                    <p>Our adaptive cooking specialists help modify techniques and tools for various physical abilities. Email adaptive@foodiefaves.com for customized recipe adaptations and equipment recommendations.</p>
+                </div>
+                
+                <div class="point-item fade-in delay-1">
+                    <h3>40. Culinary Career Advice</h3>
+                    <p>Considering a career in food? Email careers@foodiefaves.com for guidance on culinary schools, apprenticeship opportunities, and different paths in the food industry from our network of professional chefs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Foodie Faves</h3>
+                    <p>Your one-stop recipe hub for home cooks, foodies, and culinary explorers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Ave, Brooklyn, NY 11201</p>
+                        <p><i class="fas fa-phone"></i> +1 (800) 555-1234</p>
+                        <p><i class="fas fa-envelope"></i> hello@foodiefaves.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Popular Recipes</a></li>
+                        <li><a href="#">New Recipes</a></li>
+                        <li><a href="#">Seasonal Specials</a></li>
+                        <li><a href="#">Video Recipes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Join Our Community</a></li>
+                        <li><a href="#">Submit a Recipe</a></li>
+                        <li><a href="#">Foodie Clubs</a></li>
+                        <li><a href="#">Photo Challenges</a></li>
+                        <li><a href="#">Discussion Forums</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Kitchen Essentials</a></li>
+                        <li><a href="#">Meal Planners</a></li>
+                        <li><a href="#">Grocery Lists</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Foodie Faves. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // FAQ Toggle Functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.parentNode.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+        });
+    </script>
+</body>
+</html>

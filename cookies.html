@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy | Foodie Faves</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --fresh-basil: #8BC34A;
+            --tomato-red: #F44336;
+            --golden-yellow: #FFEB3B;
+            --charcoal-gray: #424242;
+            --light-gray: #f5f5f5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--charcoal-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            color: var(--charcoal-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--tomato-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e53935;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7CB342;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--fresh-basil);
+            color: var(--fresh-basil);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--fresh-basil);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--tomato-red);
+        }
+
+        .logo i {
+            color: var(--fresh-basil);
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--tomato-red);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--tomato-red);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-actions a {
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+
+        .user-actions .btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Content Styles */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--tomato-red);
+        }
+
+        .content-section h3 {
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+            color: var(--fresh-basil);
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        .policy-point {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .policy-point h4 {
+            color: var(--tomato-red);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--fresh-basil);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--fresh-basil);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--fresh-basil);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--fresh-basil);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--charcoal-gray);
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-consent p {
+            margin-bottom: 15px;
+            flex: 1 1 100%;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-consent.hidden {
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .cookie-consent-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cookie-consent-buttons .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i> Foodie Faves
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="#" title="Search"><i class="fas fa-search"></i></a>
+                <a href="#" title="Favorites"><i class="fas fa-heart"></i></a>
+                <a href="#" title="Account"><i class="fas fa-user"></i></a>
+                <a href="#" class="btn btn-primary">Upload Recipe</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <h1 class="section-title">Cookies Policy</h1>
+            
+            <p>Last Updated: June 15, 2023</p>
+            
+            <p>Welcome to Foodie Faves! This Cookies Policy explains how we use cookies and similar tracking technologies when you visit our website. Please read this policy carefully to understand our views and practices regarding cookies.</p>
+            
+            <h2>1. What Are Cookies?</h2>
+            <p>Cookies are small text files that are placed on your computer, smartphone, or other device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the website owners.</p>
+            
+            <div class="policy-point">
+                <h4>1.1 How Cookies Work</h4>
+                <p>When you visit our site, we may automatically collect information through cookies about your web browser, IP address, time zone, and some of the cookies installed on your device. As you browse the site, we collect information about the individual web pages or products you view, what websites or search terms referred you to the site, and information about how you interact with the site. Cookies help us recognize your device and remember information about your visit, like your preferred language and other settings, which can make your next visit easier and the site more useful to you.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>1.2 Types of Cookies We Use</h4>
+                <p>We use several types of cookies for different purposes: Essential cookies are necessary for our website to function and cannot be switched off. Performance cookies allow us to count visits and traffic sources so we can measure and improve site performance. Functional cookies enable enhanced functionality and personalization. Targeting cookies may be set through our site by our advertising partners to build a profile of your interests.</p>
+            </div>
+            
+            <h2>2. Why We Use Cookies</h2>
+            <p>We use cookies for various reasons, primarily to make our website function properly and to improve your experience. Below we explain the different purposes for which we use cookies.</p>
+            
+            <div class="policy-point">
+                <h4>2.1 Essential Website Operation</h4>
+                <p>Some cookies are essential for you to be able to experience the full functionality of our site. They allow us to maintain user sessions and prevent any security threats. They don't collect or store any personal information. For example, these cookies allow you to log in to your account, add recipes to your favorites, or securely make purchases through our site.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>2.2 Website Performance</h4>
+                <p>These cookies help us understand how visitors interact with our website by providing information about the areas visited, the time spent on the website, and any issues encountered, such as error messages. This helps us improve the performance of our website. For instance, if we notice that many users abandon our recipe submission form at a particular step, we can investigate and improve that part of the process.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>2.3 Functionality Cookies</h4>
+                <p>These cookies allow our website to remember choices you make (such as your username, language, or region) and provide enhanced, more personal features. The information these cookies collect may be anonymized and they cannot track your browsing activity on other websites. For example, we might store your preferred measurement units (metric or imperial) so recipes display in your preferred format.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>2.4 Targeting/Advertising Cookies</h4>
+                <p>These cookies may be set through our site by our advertising partners to build a profile of your interests and show you relevant ads on other sites. They work by uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising. For instance, if you frequently view vegetarian recipes, we might show you ads for vegetarian cooking products or services.</p>
+            </div>
+            
+            <h2>3. Types of Cookies We Use</h2>
+            <p>We use both session cookies and persistent cookies on our website. Below we explain the difference between these types.</p>
+            
+            <div class="policy-point">
+                <h4>3.1 Session Cookies</h4>
+                <p>Session cookies are temporary cookies that remain on your device until you leave our website. We use session cookies to track your internet session, which allows you to navigate between pages efficiently. For example, session cookies enable the shopping cart function on our site, remembering the items you've selected as you move between pages. These cookies are automatically deleted when you close your browser.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>3.2 Persistent Cookies</h4>
+                <p>Persistent cookies remain on your device for the period of time specified in the cookie (from a few hours to several years). We use these cookies to remember your preferences when you return to our site, and for analytical purposes to understand how users interact with our site over time. For instance, if you select "Remember Me" when logging in, a persistent cookie will be set to keep you logged in for future visits.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>3.3 First-Party Cookies</h4>
+                <p>First-party cookies are set by our website and can only be read by our site. We use these for various functions including authentication, preference storage, and site analytics. For example, when you log in to your Foodie Faves account, first-party cookies help keep you logged in as you navigate through different pages.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>3.4 Third-Party Cookies</h4>
+                <p>Third-party cookies are set by domains other than our website, typically by our partners and service providers. These might include analytics cookies that help us understand how our site is used, advertising cookies that help deliver relevant ads, and social media cookies that enable integration with social platforms. For instance, we use Google Analytics cookies to understand how users find and navigate our site.</p>
+            </div>
+            
+            <h2>4. Specific Cookies We Use</h2>
+            <p>Below is a detailed list of the specific cookies we use on Foodie Faves, along with their purposes and durations.</p>
+            
+            <div class="policy-point">
+                <h4>4.1 Essential Cookies</h4>
+                <p>auth_token: This cookie maintains your authentication session when logged in (duration: session). site_preferences: Stores your language and regional preferences (duration: 1 year). cart_id: Maintains your shopping cart contents (duration: 7 days). csrf_token: Provides security against cross-site request forgery attacks (duration: session). These cookies are strictly necessary for the website to function and cannot be refused.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>4.2 Performance Cookies</h4>
+                <p>_ga: Google Analytics cookie used to distinguish users (duration: 2 years). _gid: Google Analytics cookie used to distinguish users (duration: 24 hours). _gat: Google Analytics cookie used to throttle request rate (duration: 1 minute). These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>4.3 Functionality Cookies</h4>
+                <p>recipe_prefs: Stores your preferred recipe display settings (duration: 1 month). measurement_system: Remembers your preferred measurement system (metric/imperial) (duration: 1 year). recently_viewed: Tracks recipes you've recently viewed to provide personalized recommendations (duration: 30 days). These cookies enable enhanced functionality and personalization.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>4.4 Targeting/Advertising Cookies</h4>
+                <p>fr: Facebook pixel cookie used for tracking and ad targeting (duration: 3 months). _gcl_au: Google Adsense cookie used for ad delivery (duration: 3 months). NID: Google cookie containing a unique ID to remember your preferences (duration: 6 months). These cookies may be set through our site by our advertising partners.</p>
+            </div>
+            
+            <h2>5. Managing Cookies</h2>
+            <p>You have several options to manage cookies on our website. Below we explain how you can control cookie settings.</p>
+            
+            <div class="policy-point">
+                <h4>5.1 Browser Settings</h4>
+                <p>Most web browsers allow some control of most cookies through the browser settings. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of our website may become inaccessible or not function properly. For example, you might not be able to stay logged in or save recipe preferences.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>5.2 Cookie Consent Tool</h4>
+                <p>When you first visit our website, you'll see our cookie consent banner where you can choose which types of cookies to accept. You can change these preferences at any time by clicking the "Cookie Settings" link in our website footer. In the settings panel, you can toggle different categories of cookies on or off according to your preferences.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>5.3 Third-Party Opt-Outs</h4>
+                <p>For third-party cookies used for advertising and analytics, you can opt out through the following services: Digital Advertising Alliance (DAA) opt-out page, Network Advertising Initiative (NAI) opt-out page, and Google Analytics opt-out browser add-on. Please note that opting out doesn't mean you won't see any ads; it means the ads you see won't be personalized based on your browsing behavior.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>5.4 Mobile Device Settings</h4>
+                <p>On mobile devices, you may have additional controls over cookies through your device settings. For example, both iOS and Android provide settings to limit ad tracking. These settings vary by device manufacturer and operating system version. Consult your device documentation for information on how to adjust these settings.</p>
+            </div>
+            
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this Cookies Policy from time to time. Below we explain how we handle changes to this policy.</p>
+            
+            <div class="policy-point">
+                <h4>6.1 Notification of Changes</h4>
+                <p>When we make significant changes to this policy, we'll notify you through a notice on our website or via email (if you've provided one). We encourage you to periodically review this page for the latest information on our cookie practices. The "Last Updated" date at the top of this policy indicates when it was last revised.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>6.2 Continued Use as Consent</h4>
+                <p>Your continued use of our website after we make changes to this policy is deemed to be acceptance of those changes. If you do not agree to the changes, you should stop using our website or adjust your cookie settings accordingly. We will always respect any cookie preferences you've previously set through our consent tool.</p>
+            </div>
+            
+            <h2>7. Contact Information</h2>
+            <p>If you have any questions about our use of cookies, please contact us using the information below.</p>
+            
+            <div class="policy-point">
+                <h4>7.1 How to Contact Us</h4>
+                <p>For questions about this Cookies Policy or our cookie practices, you may contact our Data Protection Officer at dpo@foodiefaves.com or by mail at: Foodie Faves, Attn: Data Protection Officer, 123 Culinary Lane, Suite 500, San Francisco, CA 94102, USA. We typically respond to inquiries within 5-7 business days.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>7.2 Complaints</h4>
+                <p>If you have concerns about how we handle cookies or your personal data, you have the right to lodge a complaint with the relevant data protection authority in your country. For users in the European Union, this would typically be the authority in your member state. For users in the UK, this would be the Information Commissioner's Office (ICO).</p>
+            </div>
+            
+            <h2>8. Legal Basis for Cookie Use</h2>
+            <p>We process cookie data based on different legal grounds depending on the type of cookie.</p>
+            
+            <div class="policy-point">
+                <h4>8.1 Necessary Cookies</h4>
+                <p>For essential cookies that are strictly necessary for the operation of our website, we process this data based on our legitimate interest in providing a functional website. These cookies don't require consent under laws like the GDPR, though we still inform users about them in this policy.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>8.2 Performance and Functional Cookies</h4>
+                <p>For performance and functional cookies, we process data based on your consent, which you provide through our cookie banner. You can withdraw this consent at any time by adjusting your cookie settings. Withdrawing consent won't affect the lawfulness of processing before the withdrawal.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>8.3 Marketing Cookies</h4>
+                <p>For marketing and targeting cookies, we also rely on your consent. These cookies are only placed if you explicitly opt-in through our cookie consent tool. We make sure to provide clear information about what these cookies do and how they're used before obtaining consent.</p>
+            </div>
+            
+            <h2>9. Data Retention</h2>
+            <p>We retain cookie data for different periods depending on the type of cookie and its purpose.</p>
+            
+            <div class="policy-point">
+                <h4>9.1 Session Cookies</h4>
+                <p>Session cookies are automatically deleted when you close your browser. These temporary cookies don't persist after your browsing session ends. The data collected by these cookies is typically only stored for the duration of your visit to our website.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>9.2 Persistent Cookies</h4>
+                <p>Persistent cookies remain on your device for the duration specified in the cookie (from a few days to several years). The retention period for each persistent cookie is set based on its specific purpose. For example, authentication cookies might last for 30 days, while analytics cookies might last for 2 years.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>9.3 Server-Side Data</h4>
+                <p>Some cookie data may be processed and stored on our servers for longer periods for analytical and record-keeping purposes. We anonymize or aggregate this data where possible, and retain it only as long as necessary for the purposes outlined in this policy or as required by law.</p>
+            </div>
+            
+            <h2>10. International Data Transfers</h2>
+            <p>Some of our cookie providers may process data outside your country of residence.</p>
+            
+            <div class="policy-point">
+                <h4>10.1 Third-Party Processors</h4>
+                <p>Some third-party cookies we use may involve transferring data to countries outside the European Economic Area (EEA) or your home country. For example, Google Analytics processes data in the United States. We ensure such transfers are protected by appropriate safeguards like the EU-US Privacy Shield (where applicable) or Standard Contractual Clauses.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>10.2 Your Rights</h4>
+                <p>Regardless of where your data is processed, you have certain rights regarding your personal data under laws like the GDPR. These may include the right to access, correct, delete, or restrict processing of your data. You can exercise these rights by contacting us using the information in Section 7.</p>
+            </div>
+            
+            <h2>11. Cookie Usage by Third Parties</h2>
+            <p>Third parties may also use cookies on our website for various purposes.</p>
+            
+            <div class="policy-point">
+                <h4>11.1 Embedded Content</h4>
+                <p>Our website may include embedded content (e.g., videos from YouTube, social media buttons). These third parties may use cookies to track your interaction with this content. We don't control these cookies, and we recommend you review the respective third-party cookie policies for more information.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>11.2 Social Media Cookies</h4>
+                <p>We integrate social media features (like Facebook "Like" buttons) that may set cookies to recognize you when you visit our site and when you use social media platforms. These cookies allow social networks to track your browsing habits across websites.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>11.3 Advertising Networks</h4>
+                <p>Advertising networks may use cookies to build a profile of your interests and show you relevant ads on other sites. These cookies track your browsing across websites that use the same advertising network. You can opt out of many advertising networks through the Digital Advertising Alliance or similar services.</p>
+            </div>
+            
+            <h2>12. Security Measures</h2>
+            <p>We implement appropriate security measures to protect cookie data.</p>
+            
+            <div class="policy-point">
+                <h4>12.1 Secure Cookies</h4>
+                <p>Where appropriate, we use secure cookies that are only transmitted over encrypted (HTTPS) connections. These cookies have the Secure attribute enabled, which prevents them from being sent over unencrypted connections. We also use HttpOnly flags where possible to help prevent cross-site scripting attacks.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>12.2 Data Minimization</h4>
+                <p>We only collect the minimum amount of data necessary through cookies to achieve their stated purposes. Where possible, we anonymize or pseudonymize data collected through cookies to protect your privacy while still allowing us to analyze website usage patterns.</p>
+            </div>
+            
+            <h2>13. Children's Privacy</h2>
+            <p>We take special precautions regarding cookies and children's data.</p>
+            
+            <div class="policy-point">
+                <h4>13.1 Age Restrictions</h4>
+                <p>Our website is not intended for children under 16 years of age. We don't knowingly collect personal information from children under 16 through cookies or other means. If we learn we have collected such information, we'll delete it promptly. Parents can contact us to request deletion of any data collected from their children.</p>
+            </div>
+            
+            <h2>14. Additional Information</h2>
+            <p>For more details about our data practices, please see our Privacy Policy.</p>
+            
+            <div class="policy-point">
+                <h4>14.1 Relationship to Privacy Policy</h4>
+                <p>This Cookies Policy supplements our Privacy Policy, which provides more comprehensive information about how we collect, use, and protect personal data. The Privacy Policy explains your rights regarding personal data we collect through cookies and other means, and how you can exercise those rights.</p>
+            </div>
+            
+            <div class="policy-point">
+                <h4>14.2 Definitions</h4>
+                <p>For purposes of this policy: "Personal data" means any information relating to an identified or identifiable individual. "Processing" means any operation performed on personal data. "Controller" means the entity that determines the purposes and means of processing personal data (Foodie Faves in this case). "Processor" means an entity that processes personal data on behalf of the controller.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Foodie Faves</h3>
+                    <p>Your one-stop recipe hub for home cooks, foodies, and culinary explorers.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Lane, San Francisco, CA 94102</p>
+                        <p><i class="fas fa-phone"></i> +1 (800) 555-9876</p>
+                        <p><i class="fas fa-envelope"></i> hello@foodiefaves.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Popular Recipes</a></li>
+                        <li><a href="#">New Recipes</a></li>
+                        <li><a href="#">Seasonal Specials</a></li>
+                        <li><a href="#">Video Recipes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Join Our Community</a></li>
+                        <li><a href="#">Submit a Recipe</a></li>
+                        <li><a href="#">Foodie Clubs</a></li>
+                        <li><a href="#">Photo Challenges</a></li>
+                        <li><a href="#">Discussion Forums</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Kitchen Essentials</a></li>
+                        <li><a href="#">Meal Planners</a></li>
+                        <li><a href="#">Grocery Lists</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Foodie Faves. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="cookies.html">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <p>We use cookies to enhance your experience on our website. By clicking "Accept", you consent to our use of cookies as described in our <a href="cookies.html" style="color: var(--fresh-basil);">Cookies Policy</a>.</p>
+        <div class="cookie-consent-buttons">
+            <button class="btn btn-primary" id="acceptCookies">Accept</button>
+            <button class="btn btn-outline" id="declineCookies">Decline</button>
+            <button class="btn btn-secondary" id="cookieSettings">Settings</button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Cookie Consent Banner
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptCookies = document.getElementById('acceptCookies');
+        const declineCookies = document.getElementById('declineCookies');
+        const cookieSettings = document.getElementById('cookieSettings');
+        
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.style.display = 'flex';
+        } else {
+            cookieConsent.style.display = 'none';
+        }
+        
+        // Handle accept button
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.style.display = 'none';
+            // Here you would also set all cookies
+        });
+        
+        // Handle decline button
+        declineCookies.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieConsent.style.display = 'none';
+            // Here you would only set essential cookies
+        });
+        
+        // Handle settings button
+        cookieSettings.addEventListener('click', () => {
+            // In a real implementation, this would open a modal with granular cookie settings
+            alert('Cookie settings would open here, allowing you to choose which types of cookies to accept.');
+        });
+    </script>
+</body>
+</html>

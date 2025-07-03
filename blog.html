@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Faves Blog | Recipes, Tips & Culinary Adventures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --fresh-basil: #8BC34A;
+            --tomato-red: #F44336;
+            --golden-yellow: #FFEB3B;
+            --charcoal-gray: #424242;
+            --light-gray: #f5f5f5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--charcoal-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+            color: var(--charcoal-gray);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--tomato-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e53935;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7CB342;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--fresh-basil);
+            color: var(--fresh-basil);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--fresh-basil);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8rem;
+            color: var(--tomato-red);
+        }
+
+        .logo i {
+            color: var(--fresh-basil);
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--tomato-red);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--tomato-red);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-actions a {
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+
+        .user-actions .btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('p11.webp') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .blog-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Blog Content */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            margin: 60px auto;
+        }
+
+        .main-content {
+            padding-right: 30px;
+        }
+
+        .sidebar {
+            padding-left: 30px;
+            border-left: 1px solid #eee;
+        }
+
+        .article-card {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .article-card:last-child {
+            border-bottom: none;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .article-meta span {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-meta i {
+            margin-right: 5px;
+            color: var(--fresh-basil);
+        }
+
+        .article-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--tomato-red);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--fresh-basil);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .tag {
+            background-color: var(--light-gray);
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--fresh-basil);
+            color: white;
+        }
+
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-widget:last-child {
+            border-bottom: none;
+        }
+
+        .widget-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--fresh-basil);
+        }
+
+        .search-widget form {
+            display: flex;
+        }
+
+        .search-widget input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+        }
+
+        .search-widget button {
+            padding: 0 20px;
+            background-color: var(--fresh-basil);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+        }
+
+        .popular-posts .post {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .popular-posts .post-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .popular-posts .post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .popular-posts .post-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .popular-posts .post-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .categories-widget ul {
+            list-style: none;
+        }
+
+        .categories-widget li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .categories-widget a {
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+        }
+
+        .categories-widget a:hover {
+            color: var(--tomato-red);
+        }
+
+        .categories-widget span {
+            background-color: var(--light-gray);
+            padding: 2px 8px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .tags-widget {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tags-widget .tag {
+            margin-bottom: 8px;
+        }
+
+        /* Newsletter Widget */
+        .newsletter-widget {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .newsletter-widget p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-widget form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .newsletter-widget input {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .newsletter-widget button {
+            padding: 12px;
+            background-color: var(--tomato-red);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .page-numbers {
+            display: flex;
+            list-style: none;
+        }
+
+        .page-numbers li {
+            margin: 0 5px;
+        }
+
+        .page-numbers a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .page-numbers a:hover, .page-numbers .current {
+            background-color: var(--tomato-red);
+            color: white;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 80px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .related-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .related-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .related-card:hover .related-img img {
+            transform: scale(1.05);
+        }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .related-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 80px;
+        }
+
+        .comments-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .comments-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--fresh-basil);
+        }
+
+        .comment-list {
+            list-style: none;
+            margin-bottom: 60px;
+        }
+
+        .comment {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comment-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .comment-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .comment-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .comment-text {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .comment-reply {
+            color: var(--tomato-red);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .comment-reply:hover {
+            text-decoration: underline;
+        }
+
+        .children {
+            list-style: none;
+            margin-left: 90px;
+            margin-top: 30px;
+            border-left: 2px solid var(--fresh-basil);
+            padding-left: 30px;
+        }
+
+        /* Comment Form */
+        .comment-respond {
+            margin-top: 60px;
+        }
+
+        .comment-reply-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .comment-reply-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--fresh-basil);
+        }
+
+        .comment-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .comment-form p {
+            margin-bottom: 20px;
+        }
+
+        .comment-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: var(--fresh-basil);
+        }
+
+        .comment-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .comment-form-cookies-consent {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+        }
+
+        .comment-form-cookies-consent input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .comment-form-cookies-consent label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+
+        .form-submit {
+            grid-column: 1 / -1;
+        }
+
+        .form-submit input {
+            background-color: var(--tomato-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit input:hover {
+            background-color: #e53935;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--fresh-basil);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--fresh-basil);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--fresh-basil);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .main-content {
+                padding-right: 0;
+            }
+            
+            .sidebar {
+                padding-left: 0;
+                border-left: none;
+                margin-top: 60px;
+                border-top: 1px solid #eee;
+                padding-top: 60px;
+            }
+            
+            .sidebar-widget {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .article-image {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .article-image {
+                height: 250px;
+            }
+            
+            .comment-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .children {
+                margin-left: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .article-meta span {
+                margin-bottom: 8px;
+            }
+            
+            .article-actions {
+                flex-direction: column;
+            }
+            
+            .article-actions .btn {
+                margin-bottom: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .comment {
+                flex-direction: column;
+            }
+            
+            .comment-avatar {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i> Foodie Faves
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="#" title="Search"><i class="fas fa-search"></i></a>
+                <a href="#" title="Favorites"><i class="fas fa-heart"></i></a>
+                <a href="#" title="Account"><i class="fas fa-user"></i></a>
+                <a href="#" class="btn btn-primary">Upload Recipe</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="blog-hero-content fade-in">
+            <h1>Foodie Faves Blog</h1>
+            <p>Discover culinary secrets, cooking techniques, and food stories from around the world</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <div class="container blog-container">
+        <main class="main-content">
+            <article class="article-card fade-in">
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+                        <span><i class="far fa-user"></i> By Chef Maria Rodriguez</span>
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                        <span><i class="far fa-comments"></i> 24 Comments</span>
+                    </div>
+                    <h1 class="article-title">The Ultimate Guide to Perfecting Homemade Pasta</h1>
+                </header>
+                
+                <img src="b1.avif" alt="Homemade Pasta" class="article-image">
+                
+                <div class="article-content">
+                    <p>There's something magical about homemade pasta that store-bought varieties simply can't replicate. The texture, the flavor, and the satisfaction of creating something from scratch make the extra effort worthwhile. In this comprehensive guide, I'll walk you through everything you need to know to master the art of pasta making at home.</p>
+                    
+                    <h2>The History of Pasta</h2>
+                    <p>While many associate pasta with Italy, its origins are actually much more complex and debated among food historians. Some evidence suggests that noodles existed in China as early as 5000 BCE, while others point to Arab traders bringing early forms of pasta to Sicily in the 8th century. What we do know is that by the Middle Ages, pasta had become a staple in Italian cuisine, with different regions developing their own distinctive shapes and preparations.</p>
+                    
+                    <p>The beauty of homemade pasta lies in its simplicity. Traditional Italian pasta contains just two ingredients: flour and eggs. The type of flour used can vary depending on the region and the desired texture. In northern Italy, softer wheat flour (type "00") is preferred, while southern Italians often use semolina flour made from durum wheat for a more robust texture.</p>
+                    
+                    <h2>Essential Equipment</h2>
+                    <p>Before we dive into the recipe, let's talk about the tools you'll need:</p>
+                    
+                    <ul>
+                        <li><strong>Pasta roller:</strong> While you can roll pasta by hand with a rolling pin, a pasta roller (manual or electric) makes the process much easier and more consistent.</li>
+                        <li><strong>Large work surface:</strong> You'll need ample space for kneading and rolling out your dough.</li>
+                        <li><strong>Sharp knife or pasta cutter:</strong> For cutting your pasta into shapes.</li>
+                        <li><strong>Drying rack:</strong> While not essential, a drying rack helps prevent fresh pasta from sticking together.</li>
+                    </ul>
+                    
+                    <h2>The Basic Pasta Dough Recipe</h2>
+                    <p>This is my go-to recipe for classic egg pasta dough. It yields about 1 pound of fresh pasta, enough to serve 4-6 people.</p>
+                    
+                    <blockquote>
+                        "The secret to great pasta is in the feel of the dough. It should be smooth, elastic, and just slightly tacky - like a baby's bottom."
+                    </blockquote>
+                    
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>400g (about 3 cups) tipo "00" flour or all-purpose flour</li>
+                        <li>4 large eggs (room temperature)</li>
+                        <li>1 tablespoon olive oil (optional)</li>
+                        <li>1 teaspoon salt</li>
+                        <li>Water as needed (usually 1-2 tablespoons)</li>
+                    </ul>
+                    
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li><strong>Create a flour well:</strong> On a clean work surface, mound the flour and create a well in the center large enough to hold the eggs.</li>
+                        <li><strong>Add wet ingredients:</strong> Crack the eggs into the well, add the olive oil and salt. Using a fork, gently beat the eggs, gradually incorporating flour from the sides of the well.</li>
+                        <li><strong>Knead the dough:</strong> Once the mixture becomes too thick for the fork, use your hands to bring the dough together. Knead for about 10 minutes until smooth and elastic. If the dough feels too dry, add water 1 teaspoon at a time. If too sticky, add flour sparingly.</li>
+                        <li><strong>Rest the dough:</strong> Wrap the dough in plastic wrap and let it rest at room temperature for at least 30 minutes. This allows the gluten to relax, making the dough easier to roll out.</li>
+                    </ol>
+                    
+                    <h2>Rolling and Shaping Your Pasta</h2>
+                    <p>After resting, your dough is ready to be transformed into beautiful pasta shapes. Here's how to roll it out:</p>
+                    
+                    <ol>
+                        <li>Divide the dough into 4 equal portions. Keep the portions you're not working with covered to prevent drying.</li>
+                        <li>Flatten one portion with your hands and dust lightly with flour.</li>
+                        <li>Set your pasta roller to its widest setting (usually #1) and pass the dough through. Fold the dough into thirds like a letter and pass it through again. Repeat this process 2-3 times to develop the gluten structure.</li>
+                        <li>Gradually decrease the roller settings, passing the dough through each setting once until you reach your desired thickness. For most pasta, setting #5 or #6 is ideal.</li>
+                        <li>Once rolled, you can cut the pasta into your desired shape using the roller's cutting attachments or by hand.</li>
+                    </ol>
+                    
+                    <h2>Cooking Fresh Pasta</h2>
+                    <p>Fresh pasta cooks much faster than dried pasta, usually in just 2-4 minutes. Here are some tips for perfect results:</p>
+                    
+                    <ul>
+                        <li>Use a large pot with plenty of boiling, well-salted water (it should taste like the sea).</li>
+                        <li>Don't add oil to the water - it prevents sauce from sticking to the pasta.</li>
+                        <li>Stir gently but frequently during cooking to prevent sticking.</li>
+                        <li>Taste frequently as cooking time approaches - fresh pasta is done when it's "al dente" (firm to the bite).</li>
+                        <li>Reserve about 1/2 cup of pasta water before draining - the starchy water helps bind sauce to the pasta.</li>
+                    </ul>
+                    
+                    <h2>Troubleshooting Common Problems</h2>
+                    <p>Even experienced pasta makers encounter issues sometimes. Here's how to fix common problems:</p>
+                    
+                    <h3>Dough is too dry or crumbly</h3>
+                    <p>This usually means you need more liquid. Try kneading in water 1 teaspoon at a time until the dough comes together smoothly.</p>
+                    
+                    <h3>Dough is too sticky</h3>
+                    <p>Add flour sparingly, kneading it in a little at a time until the dough is just slightly tacky but not sticky.</p>
+                    
+                    <h3>Pasta tears when rolling</h3>
+                    <p>This could mean the dough needs more kneading or more resting time. Let it rest another 15-20 minutes and try again.</p>
+                    
+                    <h3>Pasta sticks together after cutting</h3>
+                    <p>Toss the cut pasta with a bit of semolina flour or cornmeal to prevent sticking, or hang it on a drying rack.</p>
+                    
+                    <h2>Beyond the Basics: Flavor Variations</h2>
+                    <p>Once you've mastered basic pasta dough, you can experiment with flavorful variations:</p>
+                    
+                    <ul>
+                        <li><strong>Spinach pasta:</strong> Replace one egg with 1/4 cup of cooked, drained, and puréed spinach.</li>
+                        <li><strong>Tomato pasta:</strong> Add 2 tablespoons of tomato paste to the eggs before mixing.</li>
+                        <li><strong>Herb pasta:</strong> Knead in 2 tablespoons of finely chopped fresh herbs like basil, parsley, or thyme.</li>
+                        <li><strong>Squid ink pasta:</strong> Add 1-2 teaspoons of squid ink for dramatic black pasta perfect for seafood dishes.</li>
+                    </ul>
+                    
+                    <h2>Sauce Pairings</h2>
+                    <p>The shape of your pasta should complement your sauce. Here are some classic pairings:</p>
+                    
+                    <ul>
+                        <li><strong>Tagliatelle or Fettuccine:</strong> Rich, creamy sauces like Alfredo or Bolognese</li>
+                        <li><strong>Pappardelle:</strong> Hearty meat or mushroom sauces</li>
+                        <li><strong>Farfalle (Bowties):</strong> Light cream or vegetable-based sauces</li>
+                        <li><strong>Orecchiette:</strong> Chunky vegetable sauces or pesto</li>
+                        <li><strong>Ravioli or Tortellini:</strong> Simple butter or light cream sauces to highlight the filling</li>
+                    </ul>
+                    
+                    <p>Making pasta from scratch is a rewarding culinary skill that will elevate your home cooking. While it takes practice to perfect, even your first attempts will likely be delicious. Remember that Italian nonnas have been making pasta for generations - don't be discouraged if your first batch isn't perfect. With time and practice, you'll develop the feel for the perfect dough consistency and rolling technique.</p>
+                    
+                    <p>What's your favorite pasta shape to make at home? Have you tried any unique flavor variations? Share your experiences in the comments below!</p>
+                </div>
+                
+                <div class="article-tags">
+                    <a href="#" class="tag">Pasta</a>
+                    <a href="#" class="tag">Italian Cuisine</a>
+                    <a href="#" class="tag">Homemade</a>
+                    <a href="#" class="tag">Cooking Techniques</a>
+                    <a href="#" class="tag">From Scratch</a>
+                </div>
+                
+                <div class="article-actions">
+                    <a href="#" class="btn btn-primary"><i class="fas fa-print"></i> Print Recipe</a>
+                    <a href="#" class="btn btn-outline"><i class="far fa-comment"></i> Leave a Comment</a>
+                </div>
+            </article>
+            
+            <!-- Second Article -->
+            <article class="article-card fade-in delay-1">
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 8, 2023</span>
+                        <span><i class="far fa-user"></i> By Chef James Wilson</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-comments"></i> 15 Comments</span>
+                    </div>
+                    <h1 class="article-title">The Science of Sourdough: Mastering the Art of Fermented Bread</h1>
+                </header>
+                
+                <img src="b2.webp" alt="Sourdough Bread" class="article-image">
+                
+                <div class="article-content">
+                    <p>Sourdough bread, with its crisp crust, chewy texture, and complex tangy flavor, has been enjoyed for thousands of years. Unlike commercial yeast breads, sourdough relies on wild yeast and bacteria naturally present in the flour and environment. This ancient method of bread-making is both an art and a science, requiring patience and practice to master. In this guide, we'll explore the fascinating world of sourdough, from creating your own starter to baking the perfect loaf.</p>
+                    
+                    <h2>Understanding Sourdough Starter</h2>
+                    <p>At the heart of every sourdough bread is the starter - a living culture of wild yeast and lactic acid bacteria. This symbiotic community ferments the flour, producing carbon dioxide (which makes the bread rise) and lactic/acetic acids (which give sourdough its characteristic tang).</p>
+                    
+                    <p>Creating a healthy starter takes about 5-7 days. Here's how to begin:</p>
+                    
+                    <h3>Day 1:</h3>
+                    <p>Mix 60g whole rye or whole wheat flour with 60g lukewarm water in a clean jar. Stir until smooth, cover loosely (a coffee filter or cloth works well), and let sit at room temperature (70-75°F is ideal).</p>
+                    
+                    <h3>Days 2-5:</h3>
+                    <p>Each day, discard half the starter and "feed" it with 60g unbleached all-purpose or bread flour and 60g water. By day 3 or 4, you should see bubbles forming and detect a fruity, slightly alcoholic aroma.</p>
+                    
+                    <h3>Days 6+:</h3>
+                    <p>Your starter should now reliably double in size within 4-8 hours after feeding. It's ready to use when it passes the "float test" - a small spoonful dropped in water should float.</p>
+                    
+                    <h2>The Basic Sourdough Recipe</h2>
+                    <p>Once your starter is active, you're ready to bake. This recipe makes one medium loaf (about 2 lbs).</p>
+                    
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>500g (about 3 3/4 cups) bread flour</li>
+                        <li>350g (1 1/2 cups) water (room temperature)</li>
+                        <li>100g (1/2 cup) active sourdough starter</li>
+                        <li>10g (2 tsp) salt</li>
+                    </ul>
+                    
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li><strong>Autolyse:</strong> Mix flour and water (hold back the salt and starter) until just combined. Let rest 30-60 minutes. This allows the flour to fully hydrate and gluten to begin developing.</li>
+                        <li><strong>Add starter and salt:</strong> Mix in the starter and salt thoroughly. The dough will be shaggy and sticky.</li>
+                        <li><strong>Bulk fermentation:</strong> Over the next 3-4 hours, perform a series of "stretch and folds" every 30 minutes (about 4-6 times total). This develops gluten without traditional kneading.</li>
+                        <li><strong>First rise:</strong> Let the dough rise at room temperature until it's about 50% increased in volume (typically 6-10 hours total time from mixing).</li>
+                        <li><strong>Shape:</strong> Gently shape the dough into a round (boule) or oval (batard), creating surface tension.</li>
+                        <li><strong>Final proof:</strong> Place in a proofing basket or bowl lined with a floured towel. Proof at room temperature for 1-2 hours, or refrigerate for 8-16 hours for more sour flavor.</li>
+                        <li><strong>Bake:</strong> Preheat a Dutch oven at 475°F for 45 minutes. Transfer the dough to the Dutch oven, score the top with a razor, cover, and bake for 20 minutes. Remove the lid and bake another 20-25 minutes until deep golden brown.</li>
+                        <li><strong>Cool:</strong> Let cool completely on a wire rack (at least 2 hours) before slicing to allow the crumb to set.</li>
+                    </ol>
+                    
+                    <p>Continue reading for troubleshooting tips and advanced techniques...</p>
+                </div>
+                
+                <div class="article-tags">
+                    <a href="#" class="tag">Bread</a>
+                    <a href="#" class="tag">Sourdough</a>
+                    <a href="#" class="tag">Fermentation</a>
+                    <a href="#" class="tag">Baking</a>
+                </div>
+                
+                <div class="article-actions">
+                    <a href="#" class="btn btn-primary">Continue Reading</a>
+                    <a href="#" class="btn btn-outline"><i class="far fa-comment"></i> 15 Comments</a>
+                </div>
+            </article>
+            
+            <!-- Third Article -->
+            <article class="article-card fade-in delay-2">
+                <header class="article-header">
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 1, 2023</span>
+                        <span><i class="far fa-user"></i> By Chef Anika Patel</span>
+                        <span><i class="far fa-clock"></i> 12 min read</span>
+                        <span><i class="far fa-comments"></i> 32 Comments</span>
+                    </div>
+                    <h1 class="article-title">The Complete Guide to Indian Spices: How to Build and Use Your Masala Dabba</h1>
+                </header>
+                
+                <img src="b3.avif" alt="Indian Spices" class="article-image">
+                
+                <div class="article-content">
+                    <p>Indian cuisine is renowned for its complex, layered flavors achieved through the skilled use of spices. At the heart of every Indian kitchen is the masala dabba - a round stainless steel spice box containing the essential spices used daily. In this guide, we'll explore how to build your own masala dabba, understand each spice's role, and master the techniques of tempering and blending that bring Indian dishes to life.</p>
+                    
+                    <h2>The Essential Seven: Building Your Masala Dabba</h2>
+                    <p>While regional variations exist, these seven spices form the foundation of most Indian cooking:</p>
+                    
+                    <h3>1. Cumin Seeds (Jeera)</h3>
+                    <p>With their warm, earthy flavor, cumin seeds are used whole for tempering or ground in spice blends. They aid digestion and are rich in iron.</p>
+                    
+                    <h3>2. Coriander Seeds (Dhania)</h3>
+                    <p>When dried, these seeds have a citrusy, slightly sweet flavor. Ground coriander is used in almost all Indian curries and marinades.</p>
+                    
+                    <h3>3. Mustard Seeds (Rai/Sarson)</h3>
+                    <p>These tiny black or yellow seeds pop when heated in oil, releasing a nutty flavor. Essential for South Indian and Bengali cooking.</p>
+                    
+                    <h3>4. Turmeric (Haldi)</h3>
+                    <p>This bright yellow powder adds color and a subtle earthy flavor. It has powerful anti-inflammatory properties.</p>
+                    
+                    <h3>5. Red Chili Powder (Lal Mirch)</h3>
+                    <p>Made from dried red chilies, this adds heat. Kashmiri chili powder provides vibrant color with less heat.</p>
+                    
+                    <h3>6. Garam Masala</h3>
+                    <p>A warming blend of spices like cinnamon, cardamom, cloves, and black pepper. Added at the end of cooking for aroma.</p>
+                    
+                    <h3>7. Asafoetida (Hing)</h3>
+                    <p>A pungent resin used in small quantities, especially in lentil dishes. Adds umami and aids digestion.</p>
+                    
+                    <p>Continue reading for spice storage tips, tempering techniques, and regional variations...</p>
+                </div>
+                
+                <div class="article-tags">
+                    <a href="#" class="tag">Indian Cuisine</a>
+                    <a href="#" class="tag">Spices</a>
+                    <a href="#" class="tag">Flavor Profiles</a>
+                    <a href="#" class="tag">Cooking Techniques</a>
+                </div>
+                
+                <div class="article-actions">
+                    <a href="#" class="btn btn-primary">Continue Reading</a>
+                    <a href="#" class="btn btn-outline"><i class="far fa-comment"></i> 32 Comments</a>
+                </div>
+            </article>
+            
+            <!-- Pagination -->
+            <div class="pagination fade-in delay-3">
+                <ul class="page-numbers">
+                    <li><a href="#" class="current">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget search-widget fade-in delay-1">
+                <h3 class="widget-title">Search</h3>
+                <form>
+                    <input type="text" placeholder="Search the blog...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <div class="sidebar-widget about-widget fade-in delay-2">
+                <h3 class="widget-title">About The Blog</h3>
+                <p>The Foodie Faves blog is your go-to resource for cooking techniques, global cuisines, ingredient spotlights, and culinary adventures. Our team of professional chefs and food enthusiasts share their knowledge to help you become a more confident, creative cook.</p>
+            </div>
+            
+            <div class="sidebar-widget popular-posts fade-in delay-3">
+                <h3 class="widget-title">Popular Posts</h3>
+                <div class="post">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Knife Skills">
+                    </div>
+                    <div class="post-content">
+                        <h4 class="post-title">Knife Skills 101: How to Chop Like a Pro</h4>
+                        <span class="post-date">May 25, 2023</span>
+                    </div>
+                </div>
+                
+                <div class="post">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Fermentation">
+                    </div>
+                    <div class="post-content">
+                        <h4 class="post-title">The Beginner's Guide to Home Fermentation</h4>
+                        <span class="post-date">May 18, 2023</span>
+                    </div>
+                </div>
+                
+                <div class="post">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Breakfast">
+                    </div>
+                    <div class="post-content">
+                        <h4 class="post-title">Global Breakfast Traditions: 10 Morning Meals to Try</h4>
+                        <span class="post-date">May 11, 2023</span>
+                    </div>
+                </div>
+                
+                <div class="post">
+                    <div class="post-img">
+                        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Olive Oil">
+                    </div>
+                    <div class="post-content">
+                        <h4 class="post-title">How to Choose the Best Olive Oil for Your Kitchen</h4>
+                        <span class="post-date">May 4, 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget categories-widget fade-in delay-1">
+                <h3 class="widget-title">Categories</h3>
+                <ul>
+                    <li><a href="#">Cooking Techniques <span>28</span></a></li>
+                    <li><a href="#">Global Cuisines <span>45</span></a></li>
+                    <li><a href="#">Baking & Pastry <span>32</span></a></li>
+                    <li><a href="#">Healthy Eating <span>19</span></a></li>
+                    <li><a href="#">Kitchen Tools <span>14</span></a></li>
+                    <li><a href="#">Seasonal Cooking <span>27</span></a></li>
+                    <li><a href="#">Vegetarian & Vegan <span>23</span></a></li>
+                    <li><a href="#">Food Science <span>18</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget tags-widget fade-in delay-2">
+                <h3 class="widget-title">Tags</h3>
+                <div class="tags-widget">
+                    <a href="#" class="tag">Italian</a>
+                    <a href="#" class="tag">Asian</a>
+                    <a href="#" class="tag">Mexican</a>
+                    <a href="#" class="tag">Mediterranean</a>
+                    <a href="#" class="tag">Knife Skills</a>
+                    <a href="#" class="tag">Fermentation</a>
+                    <a href="#" class="tag">Sourdough</a>
+                    <a href="#" class="tag">Pasta</a>
+                    <a href="#" class="tag">Spices</a>
+                    <a href="#" class="tag">Grilling</a>
+                    <a href="#" class="tag">Vegetarian</a>
+                    <a href="#" class="tag">Vegan</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget newsletter-widget fade-in delay-3">
+                <h3 class="widget-title">Newsletter</h3>
+                <p>Get weekly recipes, cooking tips, and exclusive content straight to your inbox!</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="container">
+            <h2 class="section-title fade-in">You Might Also Like</h2>
+            
+            <div class="related-grid">
+                <article class="related-card fade-in delay-1">
+                    <div class="related-img">
+                        <img src="b3.avif" alt="Pasta">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar-alt"></i> Apr 27, 2023</span>
+                            <span><i class="far fa-comment"></i> 8</span>
+                        </div>
+                        <h3 class="related-title">10 Essential Pasta Shapes Every Home Cook Should Know</h3>
+                        <p class="related-excerpt">From spaghetti to orecchiette, learn which pasta shapes pair best with different sauces and preparations.</p>
+                        <a href="#" class="btn btn-outline" style="width:100%; text-align:center;">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="related-card fade-in delay-2">
+                    <div class="related-img">
+                        <img src="b4.webp" alt="Ramen">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar-alt"></i> Apr 20, 2023</span>
+                            <span><i class="far fa-comment"></i> 14</span>
+                        </div>
+                        <h3 class="related-title">The Art of Ramen: Understanding the Five Elements of Perfect Bowl</h3>
+                        <p class="related-excerpt">Broth, noodles, tare, aroma oil, and toppings - how these components create ramen harmony.</p>
+                        <a href="#" class="btn btn-outline" style="width:100%; text-align:center;">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="related-card fade-in delay-3">
+                    <div class="related-img">
+                        <img src="b5.avif" alt="Desserts">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar-alt"></i> Apr 13, 2023</span>
+                            <span><i class="far fa-comment"></i> 22</span>
+                        </div>
+                        <h3 class="related-title">French Pastry Fundamentals: Mastering the Five Mother Sauces of Dessert</h3>
+                        <p class="related-excerpt">Crème pâtissière, crème anglaise, crème Chantilly, crème mousseline, and crème diplomat explained.</p>
+                        <a href="#" class="btn btn-outline" style="width:100%; text-align:center;">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <h2 class="comments-title fade-in">Comments (24)</h2>
+            
+            <ol class="comment-list">
+                <li class="comment fade-in delay-1">
+                    
+                    <div class="comment-content">
+                        <div class="comment-meta">
+                            <span class="comment-author">Sarailler</span>
+                            <span class="comment-date">June 16, 2023 at 3:24 pm</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>This guide is fantastic! I've been intimidated to try making pasta from scratch, but your step-by-step instructions made it so approachable. My first attempt wasn't perfect - the dough was a bit sticky - but the flavor was miles better than store-bought. I'll definitely try again using your troubleshooting tips.</p>
+                        </div>
+                        <a href="#" class="comment-reply">Reply</a>
+                    </div>
+                </li>
+                
+                <li class="comment fade-in delay-2">
+                    
+                    <div class="comment-content">
+                        <div class="comment-meta">
+                            <span class="comment-author">Michen</span>
+                            <span class="comment-date">June 16, 2023 at 5:42 pm</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>Great article! One tip I'd add - if you're having trouble with the dough sticking when rolling, try using semolina flour instead of regular flour for dusting. It doesn't get absorbed into the dough as easily and gives the pasta a nice texture. Also, don't skip the resting time - it really makes a difference in the elasticity.</p>
+                        </div>
+                        <a href="#" class="comment-reply">Reply</a>
+                        
+                        <ol class="children">
+                            <li class="comment fade-in delay-3">
+                                
+                                <div class="comment-content">
+                                    <div class="comment-meta">
+                                        <span class="comment-author">Chriguez</span>
+                                        <span class="comment-date">June 16, 2023 at 6:15 pm</span>
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>Michael, excellent points! Semolina is indeed perfect for dusting, especially for shapes like orecchiette or cavatelli. And you're absolutely right about resting - I like to think of it as letting the gluten "relax" so it becomes more cooperative when rolling.</p>
+                                    </div>
+                                    <a href="#" class="comment-reply">Reply</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                
+                <li class="comment fade-in delay-1">
+        
+                    <div class="comment-content">
+                        <div class="comment-meta">
+                            <span class="comment-author">Elwena Petrov</span>
+                            <span class="comment-date">June 17, 2023 at 9:07 am</span>
+                        </div>
+                        <div class="comment-text">
+                            <p>In my grandmother's village in Italy, they would make pasta with just flour and water (no eggs) - it's called pasta alla chitarra. The dough is much firmer and is traditionally cut using a special tool called a chitarra (which means guitar) that has wire strings. The texture is wonderful with hearty meat sauces. Maybe you could cover this variation in a future post?</p>
+                        </div>
+                        <a href="#" class="comment-reply">Reply</a>
+                    </div>
+                </li>
+            </ol>
+            
+            <!-- Comment Form -->
+            <div class="comment-respond fade-in delay-2">
+                <h3 class="comment-reply-title">Leave a Reply</h3>
+                <form class="comment-form">
+                    <p>
+                        <label for="author">Name *</label>
+                        <input id="author" name="author" type="text" required>
+                    </p>
+                    <p>
+                        <label for="email">Email *</label>
+                        <input id="email" name="email" type="email" required>
+                    </p>
+                    <p>
+                        <label for="url">Website</label>
+                        <input id="url" name="url" type="url">
+                    </p>
+                    <p>
+                        <label for="comment">Comment *</label>
+                        <textarea id="comment" name="comment" required></textarea>
+                    </p>
+                    <p class="comment-form-cookies-consent">
+                        <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" checked>
+                        <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                    </p>
+                    <p class="form-submit">
+                        <input type="submit" value="Post Comment">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="fade-in">Join Our Foodie Community</h2>
+            <p class="fade-in delay-1">Subscribe to our newsletter for exclusive recipes, cooking tips, and members-only content.</p>
+            
+            <form class="newsletter-form fade-in delay-2">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Foodie Faves</h3>
+                    <p>Your one-stop recipe hub for home cooks, foodies, and culinary explorers.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">All Recipes</a></li>
+                        <li><a href="#">Popular Recipes</a></li>
+                        <li><a href="#">New Recipes</a></li>
+                        <li><a href="#">Seasonal Specials</a></li>
+                        <li><a href="#">Video Recipes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Join Our Community</a></li>
+                        <li><a href="#">Submit a Recipe</a></li>
+                        <li><a href="#">Foodie Clubs</a></li>
+                        <li><a href="#">Photo Challenges</a></li>
+                        <li><a href="#">Discussion Forums</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Kitchen Essentials</a></li>
+                        <li><a href="#">Meal Planners</a></li>
+                        <li><a href="#">Grocery Lists</a></li>
+                        <li><a href="#">Conversion Charts</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Foodie Faves. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="cookies.html">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+        });
+    </script>
+</body>
+</html>
